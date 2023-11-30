@@ -1,0 +1,106 @@
+\wde{5.1.1 Product} Let $\cat A$ be a category and $X, Y \in \cat A$. A \textbf{product} of $X$ and $Y$ consists of an object $P$ and maps 
+% https://q.uiver.app/#q=WzAsMyxbMSwwLCJQIl0sWzAsMSwiWCJdLFsyLDEsIlkiXSxbMCwxLCJwXzEiLDJdLFswLDIsInBfMiJdXQ==
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	\& P \\
+	X \&\& Y
+	\arrow["{p_1}"', from=1-2, to=2-1]
+	\arrow["{p_2}", from=1-2, to=2-3]
+\end{tikzcd}
+with the property that for all objects and maps 
+% https://q.uiver.app/#q=WzAsMyxbMSwwLCJBIl0sWzAsMSwiWCJdLFsyLDEsIlkiXSxbMCwxLCJmXzEiLDJdLFswLDIsImZfMiJdXQ==
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	\& A \\
+	X \&\& Y
+	\arrow["{f_1}"', from=1-2, to=2-1]
+	\arrow["{f_2}", from=1-2, to=2-3]
+\end{tikzcd}
+in $\cat{A}$, there exists a unique map $\Bar{f}: A \to P$ such that % https://q.uiver.app/#q=WzAsNCxbMSwwLCJBIl0sWzAsMywiWCJdLFsyLDMsIlkiXSxbMSwyLCJQIl0sWzAsMSwiZl8xIiwyXSxbMCwyLCJmXzIiXSxbMywxLCJwXzEiXSxbMywyLCJwXzIiLDJdLFswLDMsIlxcYmFye2Z9IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV1d
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	\& A \\
+	\\
+	\& P \\
+	X \&\& Y
+	\arrow["{f_1}"', from=1-2, to=4-1]
+	\arrow["{f_2}", from=1-2, to=4-3]
+	\arrow["{p_1}", from=3-2, to=4-1]
+	\arrow["{p_2}"', from=3-2, to=4-3]
+	\arrow["{\bar{f}}"{description}, dashed, from=1-2, to=3-2]
+\end{tikzcd}
+commutes. $\Bar{f}$ is usually written as $(f_1, f_2)$. The maps $p_1$ and $p_2$ are called the \textbf{projections}.
+\wde{5.1.7 Product (non-binary)} Let $\cat{A}$ be a category, $I$ a set, and $(X_i)_{i \in I}$ a family of objects of $\cat A$. A \textbf{product} of $(X_i)_{i \in I}$ consists of an object $P$ and a family of maps $(P \map{p_i} X_i)_{i \in I}$ with the property that for all objects $A$ and families of maps $(A \map{f_i} X_i)_{i \in I}$ there exists a unique map $\Bar{f}: A \to P$ such that $p_i \circ \Bar{f} = f_i$ for all $i \in I$.
+\wde{Fork} A \textbf{fork} in a category consists of objects and maps $A \map{f} X \maps{s}{t} Y$ such that $sf = tf$.
+\wde{5.1.11 Equaliser} Let $\cat A$ be a category and let $X \maps{s}{t} Y$ be objects and maps in $\cat A$. An \textbf{equaliser} of $s$ and $t$ is an object $E$ together with maps $E \map{i} X$ such that $E \map{i} X \maps{s}{t} Y$ is a fork, and with the property that for any fork $A \map{f} X \maps{s}{t} Y$ there exists a unique map $\Bar{f}: A \to E$ such that % https://q.uiver.app/#q=WzAsMyxbMCwwLCJBIl0sWzAsMSwiRSJdLFsxLDEsIlgiXSxbMCwyLCJmIl0sWzEsMiwiaSIsMl0sWzAsMSwiXFxiYXJ7Zn0iLDIseyJzdHlsZSI6eyJib2R5Ijp7Im5hbWUiOiJkYXNoZWQifX19XV0=
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=scriptsize]
+	A \\
+	E \& X
+	\arrow["f", from=1-1, to=2-2]
+	\arrow["i"', from=2-1, to=2-2]
+	\arrow["{\bar{f}}"', dashed, from=1-1, to=2-1]
+\end{tikzcd} commutes.
+\wde{5.1.16 Pullbacks} Let $\cat{A}$ be a category and take objects and maps % https://q.uiver.app/#q=WzAsMyxbMSwwLCJZIl0sWzEsMSwiWiJdLFswLDEsIlgiXSxbMCwxLCJ0Il0sWzIsMSwicyIsMl1d
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	\& Y \\
+	X \& Z
+	\arrow["t", from=1-2, to=2-2]
+	\arrow["s"', from=2-1, to=2-2]
+\end{tikzcd}
+in $\cat{A}$. A \textbf{pullback} of this diagram is an object $P \in \cat{A}$ together with maps $p_1: P \to X$ and $p_2: P \to Y$ such that the \textbf{pullback square} % https://q.uiver.app/#q=WzAsNCxbMSwwLCJZIl0sWzEsMSwiWiJdLFswLDEsIlgiXSxbMCwwLCJQIl0sWzAsMSwidCJdLFsyLDEsInMiLDJdLFszLDAsInBfMiJdLFszLDIsInBfMSIsMl1d
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	P \& Y \\
+	X \& Z
+	\arrow["t", from=1-2, to=2-2]
+	\arrow["s"', from=2-1, to=2-2]
+	\arrow["{p_2}", from=1-1, to=1-2]
+	\arrow["{p_1}"', from=1-1, to=2-1]
+\end{tikzcd} commutes, and with the property that for any commutative square % https://q.uiver.app/#q=WzAsNCxbMSwwLCJZIl0sWzEsMSwiWiJdLFswLDEsIlgiXSxbMCwwLCJBIl0sWzAsMSwidCJdLFsyLDEsInMiLDJdLFszLDAsImZfMiJdLFszLDIsImZfMSIsMl1d
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	A \& Y \\
+	X \& Z
+	\arrow["t", from=1-2, to=2-2]
+	\arrow["s"', from=2-1, to=2-2]
+	\arrow["{f_2}", from=1-1, to=1-2]
+	\arrow["{f_1}"', from=1-1, to=2-1]
+\end{tikzcd} in $\cat A$, there is a unique map $\Bar{f}: A \to P$ such that% https://q.uiver.app/#q=WzAsNSxbMiwxLCJZIl0sWzIsMiwiWiJdLFsxLDIsIlgiXSxbMSwxLCJQIl0sWzAsMCwiQSJdLFswLDEsInQiXSxbMiwxLCJzIiwyXSxbMywwLCJwXzIiXSxbMywyLCJwXzEiLDJdLFs0LDMsIlxcYmFye2Z9IiwxLHsic3R5bGUiOnsiYm9keSI6eyJuYW1lIjoiZGFzaGVkIn19fV0sWzQsMCwiZl8yIiwwLHsiY3VydmUiOi0xfV0sWzQsMiwiZl8xIiwyLHsiY3VydmUiOjF9XV0=
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=scriptsize]
+	A \\
+	\& P \& Y \\
+	\& X \& Z
+	\arrow["t", from=2-3, to=3-3]
+	\arrow["s"', from=3-2, to=3-3]
+	\arrow["{p_2}", from=2-2, to=2-3]
+	\arrow["{p_1}"', from=2-2, to=3-2]
+	\arrow["{\bar{f}}"{description}, dashed, from=1-1, to=2-2]
+	\arrow["{f_2}", curve={height=-6pt}, from=1-1, to=2-3]
+	\arrow["{f_1}"', curve={height=6pt}, from=1-1, to=3-2]
+\end{tikzcd} commutes (only need to show $p_1 \Bar{f} = f_1$ and $p_2 \Bar{f} = f_2$).
+\wde{5.1.18 Diagram of Shape} Let $\cat{A}$ be a category, $\scat{I}$ a small category. A functor $\scat I \to \cat A$ is a \textbf{diagram} in $\cat A$ of shape $\scat I$.
+\wde{5.1.19 Cone, Limit} Let $\cat{A}$ be a category, $\scat{I}$ a small category, and $D: \scat I \to \cat A$ a diagram in $\cat A$. 
+(a) A \textbf{cone} on $D$ is an object $A \in \cat A$ (the \textbf{vertex} of a cone) together with a family 
+$(A \map{f_1} D(I))_{I \in \scat I}$ of maps in $\cat A$ such that for all maps $I \map{u} J$ in $\scat I$, the triangle % https://q.uiver.app/#q=WzAsMyxbMCwxLCJBIl0sWzEsMCwiRChJKSJdLFsxLDIsIkQoSikiXSxbMCwxLCJmXzEiXSxbMSwyLCJEdSJdLFswLDIsImZfSiIsMl1d
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=tiny]
+	\& {D(I)} \\
+	A \\
+	\& {D(J)}
+	\arrow["{f_1}", from=2-1, to=1-2]
+	\arrow["D(u)", from=1-2, to=3-2]
+	\arrow["{f_J}"', from=2-1, to=3-2]
+\end{tikzcd} commutes;
+(b) A \textbf{limit} of $D$ is a cone $(L \map{p_1} D(I))_{I \in \scat I}$ (we sometimes write $L = \lim_{\shortleftarrow \scat I} D$) with the property that for any cone on $D$, there exists a unique map $\Bar{f}: A \to L$ such that $p_I \circ \Bar{f} = f_I$ for all $I \in \scat I$. The maps $p_I$ are called the \textbf{projections} of the limit.
+\wde{5.1.25 All Lims} 
+(a) Let $\scat I$ be a small category. A category $\cat A$ \textbf{has limits of shape $\scat{I}$} if for every diagram $D$ of shape $\scat I$ in $\cat A$, a limit of $D$ exists.
+(b) A category has \textbf{all limits} (or properly, \textbf{has small limits)} if it has limits of shape $\scat I$ for all small categories $\scat I$.
+\wde{Finite Cat/Lim} A category is \textbf{finite} if it contains only finitely many maps. A \textbf{finite limit} is is a limit of shape $\scat I$ for some finite category $\scat I$.
+\wpr{5.1.26} Let $\cat A$ be a category.
+(a) If $\cat{A}$ has all product and equalisers then $\cat A$ has all limits;
+(b) If $\cat A$ has binary products, a terminal object, and equalisers then $\cat A$ has finite limits.
+\wde{5.1.29 Monics} Let $\cat A$ be a category. A map $X \map{f} Y$ in $\cat A$ is \textbf{monic} (or a \textbf{monomorphism}) if for all objects $A$ and maps $A \maps{x}{x'} X$, 
+$f \circ x = f \circ x' \implies x = x'$.
+\wl{5.1.32} A map $X \map{f} Y$ is monic if and only if the square % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWCJdLFsxLDEsIlkiXSxbMCwxLCJYIl0sWzAsMSwiMSJdLFsxLDIsImYiXSxbMCwzLCIxIiwyXSxbMywyLCJmIiwyXV0=
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	X \& X \\
+	X \& Y
+	\arrow["1", from=1-1, to=1-2]
+	\arrow["f", from=1-2, to=2-2]
+	\arrow["1"', from=1-1, to=2-1]
+	\arrow["f"', from=2-1, to=2-2]
+\end{tikzcd} is a pullback.

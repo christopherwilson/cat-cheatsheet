@@ -1,0 +1,90 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{titlesec}
+\titleformat{\subsection}[runin]{\normalfont\Large\bfseries}{\thesubsection.}{6pt}{}[]
+\titlespacing*{\subsection}
+{0pt}{0pt}{0pt}
+
+
+% Disable warnings
+% chktex-file 1
+
+\input{style.sty}
+\input{defs.tex}
+
+%\fontsize{2}
+
+\begin{document}
+  \begin{multicols}{2}
+    %
+    %  CHAPTER 1: Categories, Functors, \& Natural Transformations
+    %
+    \noindent\subsection*{Categories, Functors, \& Natural Transformations}
+    % 1.1 Categories
+    \input{src/ch1/s1.tex}
+    %
+    % 1.2 Functors
+    \input{src/ch1/s2.tex}
+    %
+    % 1.4 Natural Transformations
+    \input{src/ch1/s3.tex}
+    %
+    %
+    %  CHAPTER 2: Adjoints
+    %
+    \noindent\subsection*{Adjoints}
+    % 2.1 Definitions and Examples
+    \input{src/ch2/s1.tex}
+    %
+    % 2.2 Adjunctions via Units and Counits
+    \input{src/ch2/s2.tex}
+    %
+    % 2.3 Adjunctions via Initial Objects
+    \input{src/ch2/s3.tex}
+    %
+    %
+    %  CHAPTER 3: Interlude on Sets
+    %
+    \noindent\subsection*{Interlude on Sets}
+    % 3.1 Constructions with Sets
+    % No Theorems, may add things though.
+    %
+    % 3.2 Small and Large Categories
+    \input{src/ch3/s2.tex}
+    %
+    %
+    %  CHAPTER 4: Representables
+    %
+    \noindent\subsection*{Representables}
+    % 4.1 Definitions and Examples
+    \input{src/ch4/s1.tex}
+    %
+    % 4.2 The Yoneda Lemma
+    \input{src/ch4/s2.tex}
+    %
+    % 4.3 Consequences of the Yoneda Lemma
+    \input{src/ch4/s3.tex}
+    %
+    %
+    %  CHAPTER 5: Limits
+    %
+    \noindent\subsection*{Limits}
+    % 5.1 Limits: definition and examples
+    \input{src/ch5/s1.tex}
+    %
+    % 5.2 Colimits: definition and examples
+    \input{src/ch5/s2.tex}
+    %
+    % 5.3 Interactions between functors and limits
+    \input{src/ch5/s3.tex}
+    %
+    %
+    %  CHAPTER 6: Adjoints, Representables and Limits
+    %
+    \noindent\subsection*{Adjoints, Representables and Limits}
+    % 6.1 Limits in terms of representables and adjoints
+    \input{src/ch6/s1}
+  \end{multicols}
+\end{document}

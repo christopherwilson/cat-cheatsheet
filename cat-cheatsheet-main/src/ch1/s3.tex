@@ -1,0 +1,30 @@
+\wde{1.3.1 Natural Transformations} Let $\cat{A}$ and $\cat B$ be categories and let $\cat A \maps{F}{G} \cat B$ be functors. A \textbf{natural transformation} $\alpha: F \to G$ is a family $\left(F(A) \map{\alpha_{A}} G(A)\right)_{A \in \cat A}$ of maps in $\cat B$ such that for every map $A \map{f} A'$ in $\cat A$, the square % https://q.uiver.app/#q=WzAsNCxbMCwwLCJGKEEpIl0sWzEsMCwiRihBJykiXSxbMCwxLCJHKEEpIl0sWzEsMSwiRyhBJykiXSxbMCwxLCJGKGYpIl0sWzAsMiwiXFxhbHBoYV9BIiwyXSxbMSwzLCJcXGFscGhhX3tBJ30iXSxbMiwzLCJHKGYpIiwyXV0=
+\begin{tikzcd}[cramped, sep=scriptsize]
+	{F(A)} & {F(A')} \\
+	{G(A)} & {G(A')}
+	\arrow["{F(f)}", from=1-1, to=1-2]
+	\arrow["{\alpha_A}"', from=1-1, to=2-1]
+	\arrow["{\alpha_{A'}}", from=1-2, to=2-2]
+	\arrow["{G(f)}"', from=2-1, to=2-2]
+\end{tikzcd} commutes. The maps $\alpha_A$ are called the \textbf{components} of $\alpha$. We write % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzY3J7QX0iXSxbMSwwLCJcXG1hdGhzY3J7Qn0iXSxbMCwxLCJGIiwwLHsiY3VydmUiOi0yfV0sWzAsMSwiRyIsMix7ImN1cnZlIjoyfV0sWzIsMywiXFxhbHBoYSIsMCx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH19XV0=
+\begin{tikzcd}[cramped, sep=scriptsize]
+	{\mathscr{A}} & {\mathscr{B}}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-9pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=9pt}, from=1-1, to=1-2]
+	\arrow["\alpha", shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=1]
+\end{tikzcd} to mean $\alpha$ is a natural transformation from $F$ to $G$. 
+\wcn{1.3.X Functor} For any two categories $\cat A$ and $\cat B$, there is a category whose objects are the functors from $\cat A$ to $\cat B$ and whose maps are the natural transformations between them. This is called the \textbf{functor category} from $\cat A$ to $\cat B$, and is written as $[\cat A, \cat B]$ or $\cat{B}^\cat{A}$.
+\wde{1.3.10 Natural Isomorphism} Let $\cat A$ and $\cat B$ be categories. A \textbf{natural isomorphism} between functors from $\cat A$ to $\cat B$ is an isomorphism in $[\cat A, \cat B]$.
+\wl{1.3.11} Let 
+% https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzY3J7QX0iXSxbMSwwLCJcXG1hdGhzY3J7Qn0iXSxbMCwxLCJGIiwwLHsiY3VydmUiOi0xfV0sWzAsMSwiRyIsMix7ImN1cnZlIjoxfV0sWzIsMywiXFxhbHBoYSIsMCx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH19XV0=
+\begin{tikzcd}[cramped, sep=scriptsize]
+	{\mathscr{A}} & {\mathscr{B}}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-9pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=9pt}, from=1-1, to=1-2]
+	\arrow["\alpha", shorten <=2pt, shorten >=2pt, Rightarrow, from=0, to=1]
+\end{tikzcd} be a natural transformation. Then $\alpha$ is a natural isomorphism if and only if $\alpha_A : F(A) \to G(A)$ is an isomorphism for all $A \in \cat A$.
+\wde{1.3.12 Naturally In} Given functors $\cat A \maps{F}{G} \cat B$, we say that $F(A) \cong G(A)$ \textbf{naturally in} A if $F$ and $G$ are naturally isomorphic.
+\wde{1.3.15 Equivalence} An \textbf{equivalence} between categories $\cat A$ and $\cat B$ consists of a pair of functors $\cat A \isofuncs{F}{G} \cat B$ together with natural isomorphism $\eta: 1_{\cat A} \to G \circ F$, $\epsilon: F \circ G \to 1_{\cat B}$. If there exists an equivalence between $\cat A$ and $\cat B$, we say that $\cat A$ and $\cat B$ are \textbf{equivalent}, and write $\cat A \simeq \cat B$. We also say that the functors $F$ and $G$ are \textbf{equivalences}.
+\wde{1.3.17 Essentially Surjective} A functor $F: \cat A \to \cat B$ is \textbf{essentially surjective on objects} if for all $B \in \cat B$, there exists $A \in \cat A$ such that $F(A) \cong B$.
+\wpr{1.3.18} A functor is an equivalence if and only if it is full, faithful, and essentially surjective on objects.
+\wc{1.3.19} Let $F : \cat C \to \cat D$ be a full and faithful functor. Then $\cat C$ is equivalent to the full subcategory $\cat{C}'$ of $\cat D$ whose objects are those of the form $F(C)$ for some $C \in \cat C$.

@@ -1,0 +1,20 @@
+\wde{2.2.X Unit \& Counit} Given $\cat A \ladj{F}{G} \cat B$, for each $A \in \cat A$ we have a map $(A \map{\eta_A} GF(A)) = \overline{(F(A) \map{1} F(A))}$, dually for each $B \in \cat B$ we have a map $(FG(B) \map{\varepsilon_B} B) = \overline{(G(B) \map{1} G(B))}.$ These define natural transformations $\eta : 1_{\cat A} \to G \circ F$, $\varepsilon : F \circ G \to 1_{\cat B}$, called the \textbf{unit} and \textbf{counit} respectively.
+\wl{2.2.2} Given an adjunction $F \dashv G$ with unit $\eta$ and counit $\varepsilon$, the triangles 
+\begin{tikzcd}[cramped, sep=scriptsize]
+	F & FGF \\
+	& F
+	\arrow["{F\eta}", from=1-1, to=1-2]
+	\arrow["{{\varepsilon}{F}}", from=1-2, to=2-2]
+	\arrow["{1_F}"', from=1-1, to=2-2]
+\end{tikzcd}   
+\begin{tikzcd}[cramped, sep=scriptsize]
+	G & GFG \\
+	& G
+	\arrow["{{\eta}{G}}", from=1-1, to=1-2]
+	\arrow["{G\varepsilon}", from=1-2, to=2-2]
+	\arrow["{1_G}"', from=1-1, to=2-2]
+\end{tikzcd} 
+commute.
+\wl{2.2.4} Let $\cat A \ladj{F}{G} \cat B$ be an adjunction, with unit $\eta$ and counit $\varepsilon$. Then $\overline{g} = G(g) \circ \eta_A$ for any $g: F(A) \to B$, and $\overline{f} = \varepsilon_B \circ F(f)$ for any $f : A \to G(B)$.
+\wt{2.2.5} Take categories and functors $\cat A \isofuncs{F}{G} \cat B$. There is a one-to-one correspondence between: (a) adjunctions between $F$ and $G$ (with $F$ on the left and $G$ on the right); (b) pairs $(1_{\cat{A}} \map{\eta} GF, FG \map{\varepsilon} 1_{\cat{B}}$ of natural transformations satisfying the triangle identities (2.2.2).
+\wc{2.2.7} An adjunction between ordered sets consists of order-pre-serving maps $A \isofuncs{f}{g} B$ such that $\forall a \in A, \forall b \in B, \ f(a) \le b \iff a \le g(b)$.

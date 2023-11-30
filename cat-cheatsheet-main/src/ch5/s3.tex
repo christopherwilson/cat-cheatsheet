@@ -1,0 +1,9 @@
+\wde{5.3.1 Limit Preservation} (a) Let $\scat I$ be a small category. A functor $F: \cat A \to \cat B$ \textbf{preserves limits of shape $\scat I$} if for all diagrams $D: \scat{I} \to \cat{A}$ and all cones $(A \map{p_I} D(I))_{I \in \scat{I}}$ on $D$, 
+$(A \map{P_I} D(I))_{I \in \scat I}$ is a limit cone on $D$ in $\cat A \implies (F(A) \map{Fp_I} FD(I))_{I \in \scat I}$  is a limit cone on $F \circ D$ in $\cat B$.
+(b) A functor $F : \cat A \to \cat B$ \textbf{preserves limits} if it preserves limits of shape $\scat I$ for all small categories $\scat I$.
+(c) \textbf{Reflection} of limits is defined as in (a), but with $\impliedby$ in place of $\implies$.
+(5.22): If $F$ preserves limits then $F( \lim_{\leftarrow \scat{I}} D )\cong \lim_{\leftarrow \scat{I}}(F \circ D ).$
+\wde{5.3.5 Creates Limits} A functor $F: \cat A \to \cat B$ \textbf{creates a limit (of shape $\scat I$)} if whenever $D: \scat{I} \to \cat{A}$ is a diagram in $\cat A$:
+for any limit cone $(B \map{q_I} FD(I))_{i \in \scat I}$ on the diagram $F \circ D$, there is a unique cone $(A \map{p_I} D(I))_{I \in \scat{I}}$ on $D$ such that $F(A) = B$ and $F(p_I) = q_I$ for all $I \in \scat{I}$;
+this cone $(A \map{p_I} D(I))_{I \in \scat I}$ is a limit cone on $D$.
+\wl{5.3.6} Let $F : \cat A \to \cat B$ be a functor and $\scat I$ a small category. Suppose that $\cat B$ has, and $F$ creates, limits of shape $I$. Then $\cat A$ has, and $F$ preserves, limits of shape $\scat I$.

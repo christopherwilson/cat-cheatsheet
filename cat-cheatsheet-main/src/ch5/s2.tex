@@ -1,0 +1,41 @@
+\wde{5.2.1 Colimit} Let $\cat A$ be a category and $\scat I$ a small category. Let $D: \scat I \to \cat A$ be a diagram in $\cat A$, and write $D^{\op}$ for the corresponding functor $\scat{I}^{\op} \to \cat{A}^{\op}$. A \textbf{cocone} on $D$ is a cone on $D^{\op}$: i.e. an object $A \in \cat A$ together with a family 
+$(D(I) \map{f_I} A)_{I \in \scat I}$ of maps in $\cat{A}$ such that for all maps $I \map{u} J$ in $\scat{I}$, the diagram % https://q.uiver.app/#q=WzAsMyxbMCwwLCJEKFUpIl0sWzAsMiwiRChKKSJdLFsyLDEsIkEiXSxbMCwxLCJEdSIsMl0sWzEsMiwiZl9KIiwyXSxbMCwyLCJmX0kiXV0=
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=tiny]
+	{D(U)} \\
+	\&\& A \\
+	{D(J)}
+	\arrow["Du"', from=1-1, to=3-1]
+	\arrow["{f_J}"', from=3-1, to=2-3]
+	\arrow["{f_I}", from=1-1, to=2-3]
+\end{tikzcd}
+commutes.  A \textbf{colimit} of $D$ is a limit of $D^{\op}$: i.e. a cocone 
+$\left(D(I) \map{p_I} C\right)_{I \in \scat{I}}$
+with the property that for any cocone on $D$, there is a unique map $\Bar{f}: C \to A$ such that $\Bar{f} \circ p_I = f_I$ for all $I \in \scat I$. We write the vertex of the colimit as $\lim_{\to \scat{I}} D$, and call the maps $p_I$ \textbf{coprojections}.
+\wde{5.2.2 Sum/Coproduct} A \textbf{sum} or \textbf{coproduct} is a colimit over a discrete category.
+\wde{5.2.7 Coequaliser} A \textbf{coequaliser} is a colimit of shape $\bullet \maps{}{} \bullet$, i.e. given $X \maps{s}{t} Y$, a coequaliser of $s$ and $t$ is a map $Y \map{p} C$ with the universal property that $p \circ s = p \circ t$.
+\wde{5.2.11 Pushout} A \textbf{pushout} is a colimit of shape 
+$P^{\op} = $% https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMCwxXSxbMCwyXV0=
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	\bullet \& \bullet \\
+	\bullet
+	\arrow[from=1-1, to=1-2]
+	\arrow[from=1-1, to=2-1]
+\end{tikzcd},
+i.e. the pushout of a diagram % https://q.uiver.app/#q=WzAsMyxbMCwwLCJYIl0sWzEsMCwiWSJdLFswLDEsIloiXSxbMCwxLCJzIl0sWzAsMiwidCIsMl1d
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	X \& Y \\
+	Z
+	\arrow["s", from=1-1, to=1-2]
+	\arrow["t"', from=1-1, to=2-1]
+\end{tikzcd}
+is (if it exists) a commutative square % https://q.uiver.app/#q=WzAsNCxbMCwwLCJYIl0sWzEsMCwiWSJdLFswLDEsIloiXSxbMSwxLCJcXGJ1bGxldCJdLFswLDEsInMiXSxbMCwyLCJ0IiwyXSxbMiwzXSxbMSwzXV0=
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	X \& Y \\
+	Z \& \bullet
+	\arrow["s", from=1-1, to=1-2]
+	\arrow["t"', from=1-1, to=2-1]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=1-2, to=2-2]
+\end{tikzcd} that is universal as such. I.e. a pushout in category $\cat A$ is a pullback in $\cat A^{\op}$
+\wde{5.2.17 Epic} Let $\cat A$ be a category. A map $X \map{f} Y$ in $\cat A$ is \textbf{epic} (or an \textbf{epimorphism}) if for all objects $Z$ and maps $Y \maps{g}{g'} Z$, we have
+$g \circ f = g' \circ f \implies g = g'.$

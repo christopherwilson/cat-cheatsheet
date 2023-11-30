@@ -1,0 +1,43 @@
+\wde{4.1.1 $H^A$} Let $\cat A $ be a locally small category and $A \in \cat A$. We define a functor $H^A = \cat A(A, -): \cat A \to \Set$ as follows:
+For objects $B \in \cat A$, put $H^A(B) = \cat(A,B)$; 
+For maps $B \map{g} B'$ in $\cat A$, define $H^A(g) = \cat A(A,g): \cat A(A,B) \to \cat A(A, B')$ by $p \mapsto g \circ p$ for all $p: A \to B$. Sometimes $H^A(g)$ is written as $g \circ -$ or $g_*$.
+\wde{4.1.3 Representation $H^A$} Let $\cat A$ be a locally small category. A functor $X: \cat A \to \Set$ is \textbf{representable} if $X \cong H^A$ for some $A \in \cat A$. A \textbf{representation} of $X$ is a choice of an object $A \in \cat A$ and an isomorphism between $H^A$ and $X$.
+\wl{4.1.10} Let $\cat{A} \ladj{F}{G} \cat{B}$ be locally small categories, and let $A \in \cat A$. Then the functor $\cat A(A, G(-)): \cat B \to \Set$ (that is the composite $\cat B \map{G} \cat A \map{H^A} \Set$) is representable.
+\wpr{4.1.11} Any set-valued functor with a left adjoint is representable.
+\wde{4.1.X $H^f$} A map $A' \map{f} A$ induces a natural transformation % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzY3J7QX0iXSxbMSwwLCJcXG1hdGhiZntTZXR9Il0sWzAsMSwiSF5BIiwwLHsiY3VydmUiOi0yfV0sWzAsMSwiSF57QSd9IiwyLHsiY3VydmUiOjJ9XSxbMiwzLCJIXmYiLDAseyJvZmZzZXQiOjEsInNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH19XV0=
+\begin{tikzcd}[ampersand replacement=\&,cramped]
+	{\mathscr{A}} \& {\mathbf{Set}}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{H^A}", curve={height=-12pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{H^{A'}}"', curve={height=12pt}, from=1-1, to=1-2]
+	\arrow["{H^f}", shift right, shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=1]
+\end{tikzcd} whose $B$-component (for $B \in \cat A$) is the function $H^A(B) = \cat{A}(A,B) \to H^{A'}(B) = \cat{A}(A',B)\qquad$ $p \mapsto p \circ f$. 
+\wde{4.1.15 $H^\bullet$} Let $\cat A$ be a locally small category. The functor $H^\bullet: A^{\op} \to [\cat A, \Set]$ is defined on objects $A$ by $H^\bullet (A) = H^A$ and on maps $f$ by $H^\bullet(f) = H^f$.
+\wde{4.1.16 $H_A$} Let $\cat A$ be a locally small category and $A \in \cat A$. We define a functor $H_A = \cat A (-,A):\cat A^{\op} \to \Set$ as follows:
+For objects $B \in \cat A$, put $H_A(B) = \cat A(B,A)$; 
+For maps $B' \map{g} B$ in $\cat A$, define $H_A(g) = \cat A (g,A) = g^* = - \circ g : \cat A(B,A) \to \cat A (B', A)$ by $p \mapsto p \circ g$ for all $p : B \to A$.
+\wde{4.1.17 Representation $H_A$} Let $\cat A$ be a locally small category. A functor $X: \cat A \to \Set$ is \textbf{representable} if $X \cong H_A$ for some $A \in \cat A$. A \textbf{representation} of $X$ is a choice of an object $A \in \cat A$ and an isomorphism between $H_A$ and $X$.
+\wde{4.1.X} Any map $A \map{f} A'$ in $\cat A$ induces a natural transformation % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzY3J7QX1ee1xcb3B9Il0sWzEsMCwiXFxtYXRoYmZ7U2V0fSJdLFswLDEsIkhfQSIsMCx7ImN1cnZlIjotMn1dLFswLDEsIkhfe0EnfSIsMix7ImN1cnZlIjoyfV0sWzIsMywiSF9mIiwwLHsib2Zmc2V0IjoxLCJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV1d
+\begin{tikzcd}[ampersand replacement=\&,cramped]
+	{\mathscr{A}^{\op}} \& {\mathbf{Set}}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{H_A}", curve={height=-12pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{H_{A'}}"', curve={height=12pt}, from=1-1, to=1-2]
+	\arrow["{H_f}", shift right, shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=1]
+\end{tikzcd} whose component at an object $B \in \cat A$ is $H_A(B) = \cat{A}(B,A) \to H_{A'}(B) = \cat{A}(B,A') \quad$ $p \mapsto f \circ p$.
+\wde{4.1.21 Yoneda Embedding} Let $\cat A$ be a locally small category. The \textbf{Yoneda embedding} of $\cat A$ is the functor $H_\bullet : A \to [A^{\op}, \Set]$ defined on objects $A$ by $H_\bullet (A) = H_A$ and on maps $f$ by $H_\bullet (f) = H_f$.
+\wde{4.1.22} Let $\cat A$ be a locally small category. The functor 
+$\Hom_{\cat A}: \cat{A}^{\op} \times \cat A \to \Set$  
+is defined by
+% https://q.uiver.app/#q=WzAsNCxbMCwwLCIoQSxCKSJdLFsxLDAsIlxcY2F0e0F9KEEsQikiXSxbMSwyLCJcXGNhdHtBfShBJyxCJykiXSxbMCwyLCIoQScsQicpIl0sWzAsMSwiIiwwLHsib2Zmc2V0IjoxLCJzdHlsZSI6eyJ0YWlsIjp7Im5hbWUiOiJtYXBzIHRvIn19fV0sWzEsMiwiZyBcXGNpcmMgLSBcXGNpcmMgZiJdLFszLDIsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XSxbMCwzLCJnIiwwLHsib2Zmc2V0IjotMX1dLFszLDAsImYiLDAseyJvZmZzZXQiOi0xfV0sWzcsNSwiIiwwLHsic2hvcnRlbiI6eyJzb3VyY2UiOjMwLCJ0YXJnZXQiOjQwfSwibGV2ZWwiOjEsInN0eWxlIjp7InRhaWwiOnsibmFtZSI6Im1hcHMgdG8ifX19XV0=
+\begin{tikzcd}[cramped,column sep=tiny,row sep=small]
+	{(A,B)} & {\cat{A}(A,B)} \\
+	\\
+	{(A',B')} & {\cat{A}(A',B').}
+	\arrow[shift right, shorten <=2.75pt, shorten >=4pt, maps to, from=1-1, to=1-2]
+	\arrow[""{name=0, anchor=center, inner sep=0}, "{g \circ - \circ f}", from=1-2, to=3-2]
+	\arrow[maps to, from=3-1, to=3-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "g", shift left, from=1-1, to=3-1]
+	\arrow["f", shift left, from=3-1, to=1-1]
+	\arrow[shorten <=16.75pt, shorten >=25.75pt, maps to, from=1, to=0]
+\end{tikzcd}
+Meaning  $\Hom_{\cat A}(A,B) = \cat{A}(A,B)$ and $(\Hom_{\cat{A}}(f,g))(p) = g \circ p \circ f$, whenever $A' \map{f} A \map{p} B \map{g} B'$.
+\wde{4.1.25 Generalised Element} Let $A$ be an object of a category. A \textbf{generalised element} of $A$ is a map with codomain $A$. A map $S \to A$ is a generalised element of $A$ of \textbf{shape} $S$.

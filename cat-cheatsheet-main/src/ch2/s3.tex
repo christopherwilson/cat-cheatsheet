@@ -1,0 +1,18 @@
+\wde{2.3.1 Comma Category} Given categories and functors 
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=scriptsize]
+	\& \cat{B} \\
+	\cat{A} \& {\cat{C}}
+	\arrow["Q", from=1-2, to=2-2]
+	\arrow["P"', from=2-1, to=2-2]
+\end{tikzcd}, the \textbf{comma category} $(P \Rightarrow Q)$ (oft written $(P \comma Q)$) is the category defined as: objects are triples $(A, h, B)$ with $A \in \cat A$, $B \in \cat B$ and $h : P(A) \to Q(B)$ in $\cat C$; maps $(A,h,B) \to (A',h',B')$ are pairs $(f: A \to A', g: B \to B')$ of map such that the square 
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=scriptsize]
+	{P(A)} \& {P(A')} \\
+	{Q(B)} \& {Q(B')}
+	\arrow["{P(f)}", from=1-1, to=1-2]
+	\arrow["{h'}", from=1-2, to=2-2]
+	\arrow["h"', from=1-1, to=2-1]
+	\arrow["{Q(s)}"', from=2-1, to=2-2]
+\end{tikzcd} commutes.
+\wl{2.3.5} Take an adjunction $\cat{A} \ladj{F}{G} \cat B$  and an object $A \in \cat A$. Then the unit map $\eta_A : A \to GF(A)$ is an initial object of $(A \Rightarrow G)$.
+\wt{2.3.6} Take categories and functors $\cat A \isofuncs{F}{G} \cat B$. There is a one-to-one correspondence between: (a) adjunctions between $F$ and $G$, (with $F$ on the left and $G$ on the right); (b) natural transformations $\eta : 1_{\cat{A}} \to GF$ such that $\eta_A : A \to GF(A)$ is initial in $(A \Rightarrow G)$ for every $A \in \cat{A}$.
+\wc{2.3.7} Let $G: \cat{B} \to \cat{A}$ be a functor. Then $G$ has a left adjoint if and only if for each $A \in \cat{A}$, the  category $(A \Rightarrow G)$ has an initial object.

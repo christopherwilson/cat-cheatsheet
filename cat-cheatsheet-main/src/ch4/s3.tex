@@ -1,0 +1,14 @@
+\wde{4.3.X $\iso$} An arrow decorated with a $\sim$, as in $A \iso B$, denotes an isomorphism.
+\wc{4.3.2} Let $\cat A$ be a locally small category and $X: \cat{A}^{\op} \to \Set$. Then a representation of $X$ consists of an object $A \in \cat A$ together with an element $u \in X(A)$ such that: 
+for each $B \in \cat{A}$ and $x \in X(B)$, there is a unique map $\Bar{x}: B \to A$ such that $(X\Bar{x})(u) = x$.
+\wc{4.3.3} Let $\cat A$ be a locally small category and $X: \cat{A} \to \Set$. Then a representation of $X$ consists of an object $A \in \cat A$ together with an element $u \in X(A)$ such that: 
+for each $B \in \cat{A}$ and $x \in X(B)$, there is a unique map $\Bar{x}: A \to B$ such that $(X\Bar{x})(u) = x$.
+\wc{4.3.7} For any locally small category $\cat A$, the Yoneda embedding 
+$H_\bullet : \cat A \to [\cat{A}^{\op}, \Set]$ 
+is full and faithful.
+\wl{4.3.8} Let $J: \cat A \to \cat B$ be a full and faithful functor and $A, A' \in \cat A$. Then:
+(a) a map $f$ in $\cat A$ is an isomorphism if and only if the map $J(f)$ in $\cat B$ is an isomorphism;
+(b) for any isomorphism $g: J(A) \to J(A')$ in $\cat B$, there is a unique isomorphism $f: A \to A'$ in $\cat A$ such that $J(f) = g;$ 
+(c) the objects $A$ and $A'$ of $\cat A$ are isomorphic if and only if the objects $J(A)$ and $J(A')$ of $\cat B$ are isomorphic.
+\wc{4.3.10} Let $\cat A$ be a locally small category and $A, A' \in \cat A$. Then
+$H_A \cong H_{A'} \iff A \cong A' \iff H^A \cong H^{A'}.$

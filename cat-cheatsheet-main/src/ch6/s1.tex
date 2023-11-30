@@ -1,0 +1,41 @@
+\wde{6.1 Diagonal Functor} Given categories $\scat I$ and $\cat A$, and an object $A \in \cat{A}$, there is a functor $\Delta A: \scat I \to \cat A$ with constant value $A$ on objects and $1_A$ on maps. This defines, for each $\scat I$ and $\cat A$, the \textbf{diagonal} functor 
+$\Delta : \cat{A} \to [\scat{I}, \cat A].$
+\wpr{6.1.1} Let $\scat I$ be a small category, $\cat A$ a category, and $D: \scat{I} \to \cat A$ a diagram. Then there is a one-to-one correspondence between limit cones on $D$ and representations of the functor 
+$\Cone(-,D): \cat{A}^{\op} \to \Set,$
+with the representing objects of $\Cone(-,D)$ being the limit objects (that is, the vertices of the limit cones) of $D$.
+\wc{6.1.2} Limits are unique up to isomorphism.
+\wl{6.1.3} Let $\scat I$ be a small category and % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXHNjYXR7SX0iXSxbMSwwLCJcXGNhdHtBfSJdLFswLDEsIkQiLDAseyJjdXJ2ZSI6LTJ9XSxbMCwxLCJEJyIsMix7ImN1cnZlIjoyfV0sWzIsMywiXFxhbHBoYSIsMCx7InNob3J0ZW4iOnsic291cmNlIjoyMCwidGFyZ2V0IjoyMH19XV0=
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	{\scat{I}} \& {\cat{A}}
+	\arrow[""{name=0, anchor=center, inner sep=0}, "D", curve={height=-12pt}, from=1-1, to=1-2]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "{D'}"', curve={height=12pt}, from=1-1, to=1-2]
+	\arrow["\alpha", shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=1]
+\end{tikzcd} a natural transformation. Let 
+$\Bigl(\lim_{\leftarrow \scat I} D \map{p_I} D(I)\Bigr)_{I \in \scat I}$ and $\left(\lim_{\leftarrow \scat I} D' \map{p'_I} D'(I)\right)_{I \in \scat I}$ be limit cones. Then:
+(a) there is a unique map $\limcat\alpha: \limcat D \to \limcat D'$ such that for all $I \in \scat{I}$, the square % https://q.uiver.app/#q=WzAsNCxbMCwwLCJcXGxpbWNhdCBEIl0sWzEsMCwiRChJKSJdLFswLDEsIlxcbGltY2F0IEQnIl0sWzEsMSwiRCcoSSkiXSxbMCwxLCJwX0kiXSxbMCwyLCJcXGxpbWNhdFxcYWxwaGEiLDJdLFsyLDMsInAnX0kiLDJdLFsxLDMsIlxcYWxwaGFfSSJdXQ==
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	{\limcat D} \& {D(I)} \\
+	{\limcat D'} \& {D'(I)}
+	\arrow["{p_I}", from=1-1, to=1-2]
+	\arrow["\limcat\alpha"', from=1-1, to=2-1]
+	\arrow["{p'_I}"', from=2-1, to=2-2]
+	\arrow["{\alpha_I}", from=1-2, to=2-2]
+\end{tikzcd} commutes;
+(b) given cones $\left( A \map{f_I} D(I)\right)_{I \in \scat I}$  and $\left( A' \map{f'_I} D'(I)\right)_{I \in \scat I}$ and a map $s : A \to A;$ such that % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiRChJKSJdLFswLDEsIkEnIl0sWzEsMSwiRCcoSSkiXSxbMCwxLCJmX0kiXSxbMCwyLCJzIiwyXSxbMiwzLCJmJ19JIiwyXSxbMSwzLCJcXGFscGhhX0kiXV0=
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	A \& {D(I)} \\
+	{A'} \& {D'(I)}
+	\arrow["{f_I}", from=1-1, to=1-2]
+	\arrow["s"', from=1-1, to=2-1]
+	\arrow["{f'_I}"', from=2-1, to=2-2]
+	\arrow["{\alpha_I}", from=1-2, to=2-2]
+\end{tikzcd} commutes for all $I \in \scat I$, the square % https://q.uiver.app/#q=WzAsNCxbMCwwLCJBIl0sWzEsMCwiXFxsaW1jYXQgRCJdLFswLDEsIkEnIl0sWzEsMSwiXFxsaW1jYXQgRCciXSxbMCwxLCJcXGJhcntmfSJdLFswLDIsInMiLDJdLFsyLDMsIlxcYmFye2YnfSIsMl0sWzEsMywiXFxsaW1jYXQgXFxhbHBoYSJdXQ==
+\begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
+	A \& {\limcat D} \\
+	{A'} \& {\limcat D'}
+	\arrow["{\bar{f}}", from=1-1, to=1-2]
+	\arrow["s"', from=1-1, to=2-1]
+	\arrow["{\bar{f'}}"', from=2-1, to=2-2]
+	\arrow["{\limcat \alpha}", from=1-2, to=2-2]
+\end{tikzcd} also commutes.
+\wpr{6.1.4} Let $\scat I$ be a small category and $\cat A$ a category with all limits of shape $\scat I$. Then $\limcat$ defines a functor $[\scat I, \cat A] \to \cat A$, and this functor is right adjoint to the diagonal functor.

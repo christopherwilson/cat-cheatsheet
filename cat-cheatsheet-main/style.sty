@@ -1,0 +1,32 @@
+\usepackage[margin=0.45in, portrait]{geometry} % may exceed print margins
+\pagestyle{empty}
+
+\usepackage[dvipsnames]{xcolor}
+
+% Colour-blind friendly scheme
+\definecolor{MyMagenta}{rgb}{0.91,0.16,0.54}
+\definecolor{MyGreen}{rgb}{0.4,0.65,0.12}
+\definecolor{MyPurple}{rgb}{0.46,0.44,0.7}
+\definecolor{MyOrange}{rgb}{0.85,0.37,0.01}
+\definecolor{MyEmerald}{rgb}{0.11,0.62,0.47}
+\definecolor{MyYellow}{RGB}{230,171,2}
+
+\colorlet{defc}{MyMagenta}
+\colorlet{lemc}{MyGreen}
+\colorlet{corc}{MyPurple}
+\colorlet{propc}{MyOrange}
+\colorlet{thmc}{MyEmerald}
+\colorlet{cons}{MyYellow}
+
+\colorlet{namec}{DarkOrchid}
+
+\newcommand{\wde}[1]{\textcolor{defc}{\newline\textbf{DEF}} (\textcolor{namec}{\textit{#1}})}
+\newcommand{\wl}[1]{\textcolor{lemc}{\newline\textbf{LEM}} (\textcolor{namec}{\textit{#1}})}
+\newcommand{\wc}[1]{\textcolor{corc}{\newline\textbf{COR}} (\textcolor{namec}{\textit{#1}})}
+\newcommand{\wpr}[1]{\textcolor{propc}{\newline\textbf{PROP}} (\textcolor{namec}{\textit{#1}})}
+\newcommand{\wt}[1]{\textcolor{thmc}{\newline\textbf{THM}} (\textcolor{namec}{\textit{#1}})}
+\newcommand{\wcn}[1]{\textcolor{cons}{\newline\textbf{CONS}} (\textcolor{namec}{\textit{#1}})}
+\newcommand{\wpf}[1]{\textcolor{red}{\newline\textit{#1}}}  % Proof
+\newcommand{\wa}[1]{\textcolor{blue}{\newline\textit{#1}}}  % Algorithm
+\newcommand{\we}[1]{\newline(\textbf{#1})}  % Example
+
