@@ -15,7 +15,7 @@ For maps $B \map{g} B'$ in $\cat A$, define $H^A(g) = \cat A(A,g): \cat A(A,B) \
 \wde{4.1.16 $H_A$} Let $\cat A$ be a locally small category and $A \in \cat A$. We define a functor $H_A = \cat A (-,A):\cat A^{\op} \to \Set$ as follows:
 For objects $B \in \cat A$, put $H_A(B) = \cat A(B,A)$; 
 For maps $B' \map{g} B$ in $\cat A$, define $H_A(g) = \cat A (g,A) = g^* = - \circ g : \cat A(B,A) \to \cat A (B', A)$ by $p \mapsto p \circ g$ for all $p : B \to A$.
-\wde{4.1.17 Representation $H_A$} Let $\cat A$ be a locally small category. A functor $X: \cat A \to \Set$ is \textbf{representable} if $X \cong H_A$ for some $A \in \cat A$. A \textbf{representation} of $X$ is a choice of an object $A \in \cat A$ and an isomorphism between $H_A$ and $X$.
+\wde{4.1.17 Representation $H_A$} Let $\cat A$ be a locally small category. A functor $X: \cat A^{\op} \to \Set$ is \textbf{representable} if $X \cong H_A$ for some $A \in \cat A$. A \textbf{representation} of $X$ is a choice of an object $A \in \cat A$ and an isomorphism between $H_A$ and $X$.
 \wde{4.1.X} Any map $A \map{f} A'$ in $\cat A$ induces a natural transformation % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzY3J7QX1ee1xcb3B9Il0sWzEsMCwiXFxtYXRoYmZ7U2V0fSJdLFswLDEsIkhfQSIsMCx7ImN1cnZlIjotMn1dLFswLDEsIkhfe0EnfSIsMix7ImN1cnZlIjoyfV0sWzIsMywiSF9mIiwwLHsib2Zmc2V0IjoxLCJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV1d
 \begin{tikzcd}[ampersand replacement=\&,cramped]
 	{\mathscr{A}^{\op}} \& {\mathbf{Set}}
