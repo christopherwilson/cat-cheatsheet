@@ -15,7 +15,7 @@ For maps $B \map{g} B'$ in $\cat A$, define $H^A(g) = \cat A(A,g): \cat A(A,B) \
 \wde{4.1.16 $H_A$} Let $\cat A$ be a locally small category and $A \in \cat A$. We define a functor $H_A = \cat A (-,A):\cat A^{\op} \to \Set$ as follows:
 For objects $B \in \cat A$, put $H_A(B) = \cat A(B,A)$; 
 For maps $B' \map{g} B$ in $\cat A$, define $H_A(g) = \cat A (g,A) = g^* = - \circ g : \cat A(B,A) \to \cat A (B', A)$ by $p \mapsto p \circ g$ for all $p : B \to A$.
-\wde{4.1.17 Representation $H_A$} Let $\cat A$ be a locally small category. A functor $X: \cat A \to \Set$ is \textbf{representable} if $X \cong H_A$ for some $A \in \cat A$. A \textbf{representation} of $X$ is a choice of an object $A \in \cat A$ and an isomorphism between $H_A$ and $X$.
+\wde{4.1.17 Representation $H_A$} Let $\cat A$ be a locally small category. A functor $X: \cat A^{\op} \to \Set$ is \textbf{representable} if $X \cong H_A$ for some $A \in \cat A$. A \textbf{representation} of $X$ is a choice of an object $A \in \cat A$ and an isomorphism between $H_A$ and $X$.
 \wde{4.1.X} Any map $A \map{f} A'$ in $\cat A$ induces a natural transformation % https://q.uiver.app/#q=WzAsMixbMCwwLCJcXG1hdGhzY3J7QX1ee1xcb3B9Il0sWzEsMCwiXFxtYXRoYmZ7U2V0fSJdLFswLDEsIkhfQSIsMCx7ImN1cnZlIjotMn1dLFswLDEsIkhfe0EnfSIsMix7ImN1cnZlIjoyfV0sWzIsMywiSF9mIiwwLHsib2Zmc2V0IjoxLCJzaG9ydGVuIjp7InNvdXJjZSI6MjAsInRhcmdldCI6MjB9fV1d
 \begin{tikzcd}[ampersand replacement=\&,cramped]
 	{\mathscr{A}^{\op}} \& {\mathbf{Set}}
@@ -23,7 +23,7 @@ For maps $B' \map{g} B$ in $\cat A$, define $H_A(g) = \cat A (g,A) = g^* = - \ci
 	\arrow[""{name=1, anchor=center, inner sep=0}, "{H_{A'}}"', curve={height=12pt}, from=1-1, to=1-2]
 	\arrow["{H_f}", shift right, shorten <=3pt, shorten >=3pt, Rightarrow, from=0, to=1]
 \end{tikzcd} whose component at an object $B \in \cat A$ is $H_A(B) = \cat{A}(B,A) \to H_{A'}(B) = \cat{A}(B,A') \quad$ $p \mapsto f \circ p$.
-\wde{4.1.21 Yoneda Embedding} Let $\cat A$ be a locally small category. The \textbf{Yoneda embedding} of $\cat A$ is the functor $H_\bullet : A \to [A^{\op}, \Set]$ defined on objects $A$ by $H_\bullet (A) = H_A$ and on maps $f$ by $H_\bullet (f) = H_f$.
+\wde{4.1.21 Yoneda Embedding} Let $\cat A$ be a locally small category. The \textbf{Yoneda embedding} of $\cat A$ is the functor $H_\bullet : \cat A \to [\cat A ^{\op}, \Set]$ defined on objects $A$ by $H_\bullet (A) = H_A$ and on maps $f$ by $H_\bullet (f) = H_f$.
 \wde{4.1.22} Let $\cat A$ be a locally small category. The functor 
 $\Hom_{\cat A}: \cat{A}^{\op} \times \cat A \to \Set$  
 is defined by
