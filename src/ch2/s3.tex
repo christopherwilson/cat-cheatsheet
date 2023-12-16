@@ -13,6 +13,7 @@
 	\arrow["h"', from=1-1, to=2-1]
 	\arrow["{Q(s)}"', from=2-1, to=2-2]
 \end{tikzcd} commutes.
+\wde{2.3.3 Slice Category} Given $A \in \cat{A}$, the \textbf{slice category} $\cat{A}/A$ has as objects maps into $A$ (a pair $(X, h)$ with $X \in \cat{A}$ and $h : X \to A$) and commutative triangles as morphisms (a map $(X, h) \to (X', h')$ in $\cat{A}/A$ is a map $f : X \to X'$ such that $h = h' \circ f$). $\cat{A}/A \cong (1_\cat{A} \Rightarrow A)$. Dually, the coslice category $A/\cat{A} \cong (A \Rightarrow 1_\cat{A})$ has maps out of $A$ as its objects.
 \wl{2.3.5} Take an adjunction $\cat{A} \ladj{F}{G} \cat B$  and an object $A \in \cat A$. Then the unit map $\eta_A : A \to GF(A)$ is an initial object of $(A \Rightarrow G)$.
 \wt{2.3.6} Take categories and functors $\cat A \isofuncs{F}{G} \cat B$. There is a one-to-one correspondence between: (a) adjunctions between $F$ and $G$, (with $F$ on the left and $G$ on the right); (b) natural transformations $\eta : 1_{\cat{A}} \to GF$ such that $\eta_A : A \to GF(A)$ is initial in $(A \Rightarrow G)$ for every $A \in \cat{A}$.
 \wc{2.3.7} Let $G: \cat{B} \to \cat{A}$ be a functor. Then $G$ has a left adjoint if and only if for each $A \in \cat{A}$, the  category $(A \Rightarrow G)$ has an initial object.
