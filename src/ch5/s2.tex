@@ -12,7 +12,7 @@ commutes.  A \textbf{colimit} of $D$ is a limit of $D^{\op}$: i.e. a cocone
 $\left(D(I) \map{p_I} C\right)_{I \in \scat{I}}$
 with the property that for any cocone on $D$, there is a unique map $\Bar{f}: C \to A$ such that $\Bar{f} \circ p_I = f_I$ for all $I \in \scat I$. We write the vertex of the colimit as $\lim_{\to \scat{I}} D$, and call the maps $p_I$ \textbf{coprojections}.
 \wde{5.2.2 Sum/Coproduct} A \textbf{sum} or \textbf{coproduct} is a colimit over a discrete category.
-\wde{5.2.7 Coequaliser} A \textbf{coequaliser} is a colimit of shape $\bullet \maps{}{} \bullet$, i.e. given $X \maps{s}{t} Y$, a coequaliser of $s$ and $t$ is a map $Y \map{p} C$ with the universal property that $p \circ s = p \circ t$.
+\wde{5.2.7 Coequaliser} A \textbf{coequaliser} is a colimit of shape $\bullet \maps{}{} \bullet$, i.e. given $X \maps{s}{t} Y$, a coequaliser of $s$ and $t$ is a map $Y \map{p} C$ that is universal with the property that $p \circ s = p \circ t$, i.e. any other map with such property factors through $p$.
 \wde{5.2.11 Pushout} A \textbf{pushout} is a colimit of shape 
 $P^{\op} = $% https://q.uiver.app/#q=WzAsMyxbMCwwLCJcXGJ1bGxldCJdLFsxLDAsIlxcYnVsbGV0Il0sWzAsMSwiXFxidWxsZXQiXSxbMCwxXSxbMCwyXV0=
 \begin{tikzcd}[ampersand replacement=\&,cramped,sep=small]
