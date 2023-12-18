@@ -1,3 +1,7 @@
 \wt{4.2.1 Yoneda} Let $\cat A$ be a locally small category and $X$ be a presheaf on $\cat A$. Then 
 $[\cat{A}^{\op}, \Set](H_A, X) \cong X(A)$
 naturally in $A \in \cat A$ and $X \in [\cat{A}^{\op},\Set]$.
+\wpf{Proof of Yoneda} Need to define for each $A$ and $X$, a bijection between $[\cat{A}^{\op}, \Set](H_A, X)$ and $X(A)$, then show the bijection is natural in $A$ and $X$. Fix $A \in \cat{A}$ and $X \in [\cat{A}^{\op}, \Set]$. Define functions $[\cat{A}^{\op}, \Set \isofuncs{(\hat{\ })}{(\Tilde{\ })} X(A)$ and show that they are mutually inverse. 
+Given $\alpha:H_A \to X$, define $\hat{\alpha} \in X(A)$ by $\hat{\alpha} = \alpha_A(1_A)$. 
+Let $x \in X(A)$. Need natural transformation $\Tilde{x}:H_A \to X$, so for each $B \in \cat{A}$ a functions $\Tilde{x}_B: H_A(B) = \cat{A}(B, A) \to X(B)$ and show that $\Tilde{x} = (\Tilde{x}_B)_{B\in \cat{A}}$ satisfies naturality. 
+Given $$
